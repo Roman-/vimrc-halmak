@@ -1,0 +1,5 @@
+vim.cmd('unmap [%')
+vim.cmd('unmap ]%')
+vim.keymap.del('n', '[d')
+vim.keymap.del('n', ']d')
+vim.keymap.del('v', 'a%')
