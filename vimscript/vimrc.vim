@@ -266,7 +266,7 @@ nnoremap <silent> <c-r> :!i3-msg "workspace number 2"<cr><cr>
 
 " vimwiki-specific config overrides common
 if expand("%:p") == "/home/lo/cloud/notes/index.md"
-    source /home/lo/cloud/coding/configs/vim/rog_halmak/vimwiki.vim
+    source /home/lo/cloud/coding/configs/vim/vimscript/vimwiki.vim
 endif
 colorscheme sonokai
 
