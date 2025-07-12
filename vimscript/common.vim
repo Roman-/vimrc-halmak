@@ -111,12 +111,12 @@ nnoremap nn <nop>
  "noremap <space>w ZQ
  noremap <space>r :wa<cr>:qa!<cr>
  noremap <space>z mx"9yy"9P`xk
- noremap <space>u :e 
+ noremap <space>u :e
  noremap <space>j J
 
  " leader + row#2
  noremap <space>h :w<cr>
- noremap <space>n :wa<cr>
+ noremap <space>H :wa<cr>
  noremap <space>, V
  noremap <space>. n
  noremap <space>a ^
