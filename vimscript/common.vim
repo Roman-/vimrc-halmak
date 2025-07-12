@@ -213,6 +213,8 @@ xnoremap <cr> "_c<cr>
      map <Right> 15i
     nmap <c-a> gacgi
     imap <c-a> <Esc><c-a>
+    nmap <c-x> d
+    "imap <c-x> d
 inoremap <c-v> <c-r>*
 cnoremap <c-v> <c-r>*
 inoremap <c-c> <c-v>
