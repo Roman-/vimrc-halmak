@@ -37,7 +37,7 @@ return {
         })
 
 
-        -- Withiout the extension it woudl've been: vim.keymap.set("n", "<space>t", ":Telescope find_files<CR>")
+        -- Without the extension it would've been: vim.keymap.set("n", "<space>t", ":Telescope find_files<CR>")
         require('telescope').load_extension('recent-files')
         vim.keymap.set('n', '<space>t', function()
             require('telescope').extensions['recent-files'].recent_files({})
