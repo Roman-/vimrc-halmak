@@ -40,8 +40,8 @@ if has('termguicolors')
     set termguicolors
 endif
 
-source /home/lo/cloud/coding/configs/vim/rog_halmak/common.vim
-source /home/lo/cloud/coding/configs/vim/rog_halmak/cyrillic.vim
+source /home/lo/cloud/coding/configs/vim/vimscript/common.vim
+source /home/lo/cloud/coding/configs/vim/vimscript/cyrillic.vim
 
 " snipmate
 let g:snipMate = { 'snippet_version' : 1 }
@@ -68,7 +68,9 @@ autocmd!
 augroup END
 
 "save all and exit gracefully when receive SIGUSR1
-autocmd Signal SIGUSR1 :wq!
+if exists('##SigUSR1')
+  autocmd SigUSR1 * wq!
+endif
 
 " these aren't needed as I don't use brackets anymore
 function! UnmapBrackets()
@@ -89,7 +91,7 @@ nnoremap <c-g> :echom expand('%:p')<Enter>
 " execute current bash script
 nnoremap <F9> :w<Enter>:!%:p<Enter>
 
-set shada=!,'2000,<150,s10,h
+set viminfo=!,'2000,<150,s10,h
 
 " add braces
 set hidden " allow to switch tabs when buffer is modified
@@ -251,9 +253,6 @@ nmap <Space>t :Files %:p:h<cr>
 nmap <space>. :History<cr>
 noremap <c-r> :History:<cr>
 noremap <space>: :History:<cr>
-"noremap £ :Lines<cr>
-
-"nmap <Space>c :cclose<CR>:tabc<CR>
 
 " misc
 hi link markdownError Normal
@@ -264,13 +263,9 @@ nnoremap + :e /tmp/scratch.txt<cr>ggVGc
 " Idea's 'focus editor', where editor is IDE on workspace 2
 nnoremap <silent> <c-r> :!i3-msg "workspace number 2"<cr><cr>
 
-" vimwiki-specific config overrides common
-if expand("%:p") == "/home/lo/cloud/notes/index.md"
-    source /home/lo/cloud/coding/configs/vim/vimscript/vimwiki.vim
-endif
 colorscheme sonokai
 
  "transparent bg
-highlight Normal guibg=none
-highlight NonText guibg=none
-highlight EndOfBuffer guibg=none
+highlight Normal      guibg=NONE ctermbg=NONE
+highlight NonText     guibg=NONE ctermbg=NONE
+highlight EndOfBuffer guibg=NONE ctermbg=NONE
