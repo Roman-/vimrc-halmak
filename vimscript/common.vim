@@ -79,7 +79,7 @@ nnoremap <esc> zz:noh<cr>
  noremap F <nop>
  noremap m ma
  noremap M mb
- noremap v :e#<cr>
+ noremap v <c-6>
  noremap V viw
  noremap c v
 xnoremap c <c-v>
@@ -211,8 +211,8 @@ xnoremap <cr> "_c<cr>
  noremap <Down> 5j
  noremap <Up> 5k
      map <Right> 15i
-    nmap <c-a> gacgi
-    imap <c-a> <Esc><c-a>
+   "nmap <c-a> gacgi " I use it for "increment number" more often than "select all"
+    imap <c-a> <Esc>gacgi
     nmap <c-x> d
     "imap <c-x> d
 inoremap <c-v> <c-r>*
