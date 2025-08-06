@@ -71,3 +71,30 @@ function RenameCurrentFile()
     vim.fn.delete(old_path)
     print('File renamed to "' .. new_name .. '".')
 end
+
+function CloseOtherTabsButKeepIndex()
+    vim.cmd('wa!')
+    local current_buf = vim.api.nvim_get_current_buf()
+    local index_buf = vim.fn.bufnr('index.md')
+    if index_buf == -1 then
+        vim.cmd('VimwikiIndex')
+        index_buf = vim.api.nvim_get_current_buf()
+    end
+    if current_buf == index_buf then
+        vim.cmd('BufferCloseAllButCurrent')
+        return
+    end
+    local state = require('barbar.state')
+    vim.cmd('buffer ' .. index_buf)
+    local was_pinned = state.is_pinned(index_buf)
+    if not was_pinned then
+        vim.cmd('BufferPin')
+    end
+    vim.cmd('buffer ' .. current_buf)
+    vim.cmd('BufferCloseAllButCurrentOrPinned')
+    vim.cmd('buffer ' .. index_buf)
+    if not was_pinned then
+        vim.cmd('BufferPin')
+    end
+    vim.cmd('buffer ' .. current_buf)
+end

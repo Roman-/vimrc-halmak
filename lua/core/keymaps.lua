@@ -13,7 +13,7 @@ vim.keymap.set("n", "<c-PageDown>", ":silent! w<CR>:BufferNext<CR>")
 vim.keymap.set("i", "<c-PageDown>", "<esc>:silent! w<CR>:BufferNext<CR>")
 vim.keymap.set({ "n", "i" }, "<S-PageDown>", "<esc>:BufferMoveNext<CR>")
 vim.keymap.set({ "n", "i" }, "<S-PageUp>", "<esc>:BufferMovePrevious<CR>")
-vim.keymap.set("n", "<space>x", ":BufferCloseAllButCurrent<CR>")
+vim.keymap.set("n", "<c-c>", ":BufferCloseAllButCurrent<CR>")
 vim.keymap.set("n", "<M-p>", ":BufferPin<CR>")
 vim.keymap.set("n", "<space>d", MoveFileToTrash)
 vim.keymap.set("n", "<space>-", "I- <esc>") -- turn current line into list item

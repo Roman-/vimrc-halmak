@@ -184,7 +184,7 @@ nnoremap kf :let @+=expand("%:p")<CR>:echom expand("%:p")<CR>
 
 if has('persistent_undo')
     set undofile
-    set undolevels=100          " Maximum number of changes that can be undone
+    set undolevels=300          " Maximum number of changes that can be undone
     set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
     set undodir=$HOME/.vim/undo
 endif

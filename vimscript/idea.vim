@@ -58,7 +58,7 @@ nmap <space>b <Action>(SelectInProjectView)
 nmap R <Action>(Refactorings.QuickListPopupAction)
 nmap <space>r <Action>(RenameElement)
 nmap <space>x <Action>(CloseAllEditorsButActive)
-nmap <space><Tab> <Action>(CloseAllUnpinnedViews)
+nmap <c-c> <Action>(CloseAllEditorsButActive)
 nmap <space>w <Action>(ShowErrorDescription)
 
 " navigation
