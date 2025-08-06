@@ -39,7 +39,19 @@ function RenameCurrentFile()
     vim.cmd('w')
 
     local current_name = vim.fn.expand('%:t')
-    local new_name = vim.fn.input('Rename "' .. current_name .. '" (with extension!) to: ')
+    local extension = vim.fn.expand('%:e')
+    local ext_with_dot = extension ~= '' and '.' .. extension or ''
+
+    -- Pre-populate the input with the file extension and position the cursor before it
+    if #ext_with_dot > 0 then
+        vim.schedule(function()
+            local move_left = string.rep('<Left>', #ext_with_dot)
+            local keys = vim.api.nvim_replace_termcodes(move_left, true, false, true)
+            vim.api.nvim_feedkeys(keys, 'c', false)
+        end)
+    end
+
+    local new_name = vim.fn.input('Rename ' .. current_name .. ': ', ext_with_dot)
 
     -- Check if a file with the new name already exists
     if vim.fn.filereadable(new_name) == 1 then
