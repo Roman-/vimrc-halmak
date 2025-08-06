@@ -213,7 +213,7 @@ xnoremap <cr> "_c<cr>
      map <Right> 15i
    "nmap <c-a> gacgi " I use it for "increment number" more often than "select all"
     imap <c-a> <Esc>gacgi
-    nmap <c-x> d
+    "nmap <c-x> d
     "imap <c-x> d
 inoremap <c-v> <c-r>*
 cnoremap <c-v> <c-r>*

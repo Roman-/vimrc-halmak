@@ -10,6 +10,8 @@ return {
                 ["scratch.md"] = { icon = "󰙏", },
                 ["vimeverywhere.txt"] = { icon = "", },
                 ["mystery_box.md"] = { icon = "󱓕", },
+                ["puzzle_prints_org.md"] = { icon = "󱓕", },
+                ["buy.md"] = { icon = "󰄐", },
             },
         })
     end,
