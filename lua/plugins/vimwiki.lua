@@ -17,7 +17,7 @@ return {
             vim.keymap.set("n", "<Tab>", ":VimwikiNextLink<CR>")
             vim.keymap.set("n", "<S-Tab>", ":VimwikiPrevLink<CR>")
             vim.keymap.set("n", "<space>x", ":wa!<cr>:VimwikiIndex<CR>:BufferCloseAllButCurrent<CR>")
-            vim.keymap.set("n", "<c-c>", CloseOtherTabsButKeepIndex)
+            vim.keymap.set("n", "<space>g", CloseOtherTabsButKeepIndex)
             vim.keymap.set("n", "+", ":VimwikiGoto scratch<cr>ggVG\"_s")
             vim.keymap.set("n", "<space>u", ":VimwikiGoto ")
             vim.api.nvim_set_keymap('v', '<F2>', ":VimwikiRenameFile<CR>", { noremap = true })

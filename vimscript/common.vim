@@ -335,7 +335,7 @@ function! ExportFileToClipboard()
     let l:content = join(getline(1, '$'), "\n")
     let @+=l:path."\n```".l:ext."\n".l:content."\n```"
 endfun
-nnoremap N :call ExportFileToClipboard()<CR>
+nnoremap <c-c> :call ExportFileToClipboard()<CR>
     nmap nu go,gegr
 
 " two lines at a time, because neovim handles it differently for some reason

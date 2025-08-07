@@ -32,6 +32,7 @@ set noerrorbells
 " when renaming and stuff, don't enter the pesky select mode
 set idearefactormode=keep
 
+nmap <F2> <Action>(RenameFile)
 nmap T <Action>(ExpandCollapseToggleAction)
 vmap T <Action>(CollapseSelection)
 nmap F <Action>(ReformatCode)
@@ -45,7 +46,7 @@ nnoremap <c-w> :bd<Enter>
 " IDEA actions
 nmap k~ <Action>(CopyFileName)
 nmap kf <Action>(CopyAbsolutePath)
-nmap N <Action>(CopyFileContentAction)
+nmap <c-c> <Action>(CopyFileContentAction)
 " should've been just /path/to/directory but idea doesn't have this option
 " nmap kd <Action>(CopyAbsolutePath)
 
@@ -59,8 +60,7 @@ nmap <space>b <Action>(SelectInProjectView)
 "nmap £ <Action>(GotoAction)
 nmap R <Action>(Refactorings.QuickListPopupAction)
 nmap <space>r <Action>(RenameElement)
-nmap <space>x <Action>(CloseAllEditorsButActive)
-nmap <c-c> <Action>(CloseAllEditorsButActive)
+nmap <space>g <Action>(CloseAllEditorsButActive)
 nmap <space>w <Action>(ShowErrorDescription)
 
 " navigation
