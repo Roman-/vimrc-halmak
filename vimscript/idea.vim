@@ -8,6 +8,7 @@ let g:argtextobj_pairs="(:),{:},<:>,[:]"
 " Source my .vimrc (no plugins)
 source /home/lo/cloud/coding/configs/vim/vimscript/common.vim
 source /home/lo/cloud/coding/configs/vim/vimscript/cyrillic.vim
+" set trackactionids - set this to track actions and assign them to Vim keys
 
 " Idea autocompletes random things so the behavior is different when do stuff like this:
 nnoremap <space>{ $t {<Enter>
@@ -44,6 +45,7 @@ nnoremap <c-w> :bd<Enter>
 " IDEA actions
 nmap k~ <Action>(CopyFileName)
 nmap kf <Action>(CopyAbsolutePath)
+nmap N <Action>(CopyFileContentAction)
 " should've been just /path/to/directory but idea doesn't have this option
 " nmap kd <Action>(CopyAbsolutePath)
 

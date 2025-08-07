@@ -99,7 +99,7 @@ xnoremap c <c-v>
 
 " ==================================================== disable default double-taps =================================================
 nnoremap ss <nop>
-nnoremap kk <nop>
+" nnoremap kk <nop>
 nnoremap dd <nop>
 nnoremap nn <nop>
 " ==================================================== leader + layer 0 =================================================
@@ -329,6 +329,13 @@ nnoremap su ggVGc
 nnoremap du ggdG
 nnoremap Du gg"_dG
 nnoremap ku mxggVGy`x
+function! ExportFileToClipboard()
+    let l:path = expand('%:p')
+    let l:ext = expand('%:e')
+    let l:content = join(getline(1, '$'), "\n")
+    let @+=l:path."\n```".l:ext."\n".l:content."\n```"
+endfun
+nnoremap N :call ExportFileToClipboard()<CR>
     nmap nu go,gegr
 
 " two lines at a time, because neovim handles it differently for some reason
