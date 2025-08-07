@@ -242,10 +242,8 @@ onoremap { i{
 onoremap } a{
 onoremap ' i'
 onoremap ¤ a'
-onoremap " i"
+onoremap g i"
 onoremap 😱 a"
-onoremap ` i`
-"onoremap v a`
 onoremap . as
 onoremap a ^
 onoremap i $
@@ -256,9 +254,7 @@ onoremap c l
 onoremap y it
 onoremap <PageUp> {
 onoremap <PageDown> }
-"onoremap ge G
-"onoremap go gg
-
+onoremap v i`
 
 " ==================================================== Text objects - simulated (s, n, k, d, D) =================================================
 " helper funcs for preserving cursor in recursive mappings
@@ -267,6 +263,13 @@ noremap § `x
 
 " this one's a bit tricky because `nr` maps to `grr` which is replace-line-with-register, but we need it to behave like replace-till-word-end
 nmap nr crn
+
+" habit breakers
+nnoremap k` "echom "use kv instead, this saves a keypress"
+nnoremap d` "echom "use dv instead, this saves a keypress"
+nnoremap D` "echom "use Dv instead, this saves a keypress"
+nnoremap n` "echom "use nv instead, this saves a keypress"
+nnoremap s` "echom "use sv instead, this saves a keypress"
 
 " prev word
 nnoremap s<Home> geciw

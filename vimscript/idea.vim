@@ -44,11 +44,9 @@ nmap <space>T <Action>(ExpandAllRegions)
 nnoremap <c-w> :bd<Enter>
 
 " IDEA actions
-nmap k~ <Action>(CopyFileName)
 nmap kf <Action>(CopyAbsolutePath)
+nmap kn <Action>(CopyFileName)
 nmap <c-c> <Action>(CopyFileContentAction)
-" should've been just /path/to/directory but idea doesn't have this option
-" nmap kd <Action>(CopyAbsolutePath)
 
 " :w needed for WebStorm
 nmap <space>h :w<cr><Action>(Build)
@@ -110,7 +108,7 @@ nmap k, ¨k<Plug>InnerArgument§
 nmap s, s<Plug>InnerArgument
 nmap n, n<Plug>InnerArgument
 
-" emulate yank-assassin (yanking without moving cursor) for text-objects
+" Emulate yank-assassin (yanking without moving cursor) for text-objects
 nnoremap kw mxyb`x
 nnoremap k& mxyB`x
 nnoremap kr mxye`x
@@ -128,7 +126,8 @@ nnoremap k} mxya{`x
 nnoremap kt mxyy`x
 nnoremap k" mxyi"`x
 nnoremap k' mxyi'`x
-nnoremap k` mxyi``x
+nnoremap k` :echom "use kv instead, this saves a keypress"
+nnoremap kv mxyi``x
 nnoremap kh mx^yg_`x
 nnoremap ko mxyk`x
 nnoremap ke mxyj`x
