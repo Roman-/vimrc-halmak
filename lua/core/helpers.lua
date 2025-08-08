@@ -110,3 +110,10 @@ function CloseOtherTabsButKeepIndex()
     end
     vim.cmd('buffer ' .. current_buf)
 end
+
+function ExportFileToClipboard()
+    local path = vim.fn.expand('%:p')
+    local ext = vim.fn.expand('%:e')
+    local content = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), '\n')
+    vim.fn.setreg('+', path .. '\n```' .. ext .. '\n' .. content .. '\n```')
+end

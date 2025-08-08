@@ -21,6 +21,7 @@ vim.keymap.set("n", "<space>g", ":BufferCloseAllButCurrent<CR>")
 -- yank path (copy current filename to clipboard)
 vim.keymap.set("n", "kf", ":let @+=expand(\"%:p\")<CR>:echom expand(\"%:p\")<CR>")
 vim.keymap.set("n", "kn", ":let @+=expand(\"%:t\")<CR>:echom expand(\"%:t:r\")<CR>")
+vim.keymap.set("n", "<c-c>", ExportFileToClipboard)
 
 -- Consistently "delete prev word": mapping Ctrl-Backspace does not work in terminal Vim. Following is a workaround.
 vim.keymap.set({ 'i', 'c' }, '<C-BS>', '<C-w>')
