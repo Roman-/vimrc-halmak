@@ -241,8 +241,9 @@ onoremap > a<
 onoremap { i{
 onoremap } a{
 onoremap ' i'
+onoremap " i"
 onoremap ¤ a'
-onoremap g i"
+"onoremap g i" - doesn't work as `g` expects motion
 onoremap 😱 a"
 onoremap . as
 onoremap a ^
