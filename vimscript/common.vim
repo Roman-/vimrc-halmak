@@ -160,7 +160,7 @@ xnoremap <space>i g_
 nnoremap ^ mxO<esc>`x
  noremap ] T
 "noremap ? ?
-"noremap * *
+vnoremap * y/<C-r>"<CR>
  noremap 0 F
 
  " RED row#2
