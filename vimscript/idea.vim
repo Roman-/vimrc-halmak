@@ -80,6 +80,8 @@ nmap <S-Tab> <Action>(GotoPreviousError)
 nmap gh <Action>(CIDR.Lang.SwitchHeaderSource)
 nmap gt <Action>(GotoDeclaration)
 nmap <space>q <Action>(QuickImplementations)
+" in Idea, commenting current line (!) automaticaly puts the cursor down (e)
+nmap    <space>/ <space>yo!
 "nmap <space>_ <Action>(ExpressionTypeInfo)
 " freaking gM doesn't work there
 " noremap \| 60\|

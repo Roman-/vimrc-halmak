@@ -13,6 +13,7 @@ return {
             vim.keymap.set("n", "z", "<Plug>VimwikiListO")
             vim.keymap.set("n", "I", ":VimwikiIndex<CR>")
             vim.keymap.set("n", "R", ":e ab_radix.md<CR>")
+            vim.keymap.set("n", "B", ":e buy.md<CR>")
             vim.keymap.set("n", "gt", ":VimwikiFollowLink<CR>")
             vim.keymap.set("n", "<Tab>", ":VimwikiNextLink<CR>")
             vim.keymap.set("n", "<S-Tab>", ":VimwikiPrevLink<CR>")

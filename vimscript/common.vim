@@ -130,7 +130,7 @@ xnoremap <space>i g_
 
  " leader + row#3
  noremap <space>m q
- nmap    <space>/ <space>yo!
+ nmap    <space>/ <space>yo!e
  nmap    <space>÷ <space>y!oo
  noremap <space>p o<c-r><c-o>+<esc>
  noremap <space>> O<c-r><c-o>+<esc>

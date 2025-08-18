@@ -46,7 +46,6 @@ return {
         vim.keymap.set("n", "<space>S", ":Telescope spell_suggest<CR>")
         vim.keymap.set("n", "<space>:", ":Telescope command_history<CR>")
         vim.keymap.set("n", "<space>.", ":Telescope oldfiles<CR>")
-        vim.keymap.set("n", "<space>/", ":Telescope search_history<CR>")
     end,
     dependencies = {
         'nvim-lua/plenary.nvim',
