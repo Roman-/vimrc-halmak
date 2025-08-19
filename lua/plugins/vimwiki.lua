@@ -60,6 +60,31 @@ return {
                 end,
             })
 
+            -- Render a visual separator for lines that are exactly `--`
+            local dash_ns = vim.api.nvim_create_namespace("vimwiki_dash_separator")
+
+            local function render_dash_separators(bufnr)
+                vim.api.nvim_buf_clear_namespace(bufnr, dash_ns, 0, -1)
+                local width = vim.api.nvim_win_get_width(0)
+                for i, line in ipairs(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)) do
+                    if line == "--" then
+                        vim.api.nvim_buf_set_extmark(bufnr, dash_ns, i - 1, 0, {
+                            virt_text = { { string.rep("─", width), "LineNr" } },
+                            virt_text_pos = "overlay",
+                        })
+                    end
+                end
+            end
+
+            vim.api.nvim_create_autocmd({ "BufEnter", "TextChanged", "TextChangedI", "VimResized" }, {
+                pattern = "*.md",
+                callback = function(args)
+                    if vim.bo[args.buf].filetype == "vimwiki" then
+                        render_dash_separators(args.buf)
+                    end
+                end,
+            })
+
         end,
     }
 }
