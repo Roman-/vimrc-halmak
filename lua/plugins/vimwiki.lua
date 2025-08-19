@@ -24,6 +24,20 @@ return {
             vim.api.nvim_set_keymap('v', '<F2>', ":VimwikiRenameFile<CR>", { noremap = true })
             vim.api.nvim_set_keymap('n', '±', ':execute "edit " . system("ls *.md | shuf -n 1")<cr>', { noremap = true })
 
+            local function insert_dash_separator()
+                local row = vim.api.nvim_win_get_cursor(0)[1]
+                local line = vim.api.nvim_get_current_line()
+                if line:match("^%s*$") then
+                    vim.api.nvim_buf_set_lines(0, row - 1, row, false, { "--", "" })
+                    vim.api.nvim_win_set_cursor(0, { row + 1, 0 })
+                else
+                    vim.api.nvim_buf_set_lines(0, row, row, false, { "--", "" })
+                    vim.api.nvim_win_set_cursor(0, { row + 2, 0 })
+                end
+                vim.cmd("startinsert")
+            end
+            vim.keymap.set("n", "ns", insert_dash_separator)
+
             vim.opt.expandtab = true
             vim.g.vimwiki_conceallevel = 0
             vim.g.vimwiki_autowriteall = 1
