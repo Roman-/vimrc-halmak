@@ -46,6 +46,20 @@ return {
                 ]]
             })
 
+            -- Allow using `--` as a plain separator by disabling SetExt headers
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = "vimwiki",
+                callback = function()
+                    vim.cmd [[
+                        syntax clear VimwikiHeader1
+                        syntax clear VimwikiHeader2
+                        for i in range(1,6)
+                            execute 'syntax match VimwikiHeader'.i.' /'.vimwiki#vars#get_syntaxlocal('rxH'.i, vimwiki#vars#get_wikilocal('syntax')).'/ contains=VimwikiTodo,VimwikiHeaderChar,VimwikiNoExistsLink,VimwikiCode,VimwikiLink,VimwikiWeblink1,VimwikiWikiLink1,VimwikiList,VimwikiListTodo,@Spell'
+                        endfor
+                    ]]
+                end,
+            })
+
         end,
     }
 }
